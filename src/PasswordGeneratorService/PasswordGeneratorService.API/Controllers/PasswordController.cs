@@ -3,6 +3,8 @@ using PasswordGeneratorService.API.DTOs;
 using PasswordGeneratorService.API.Services;
 
 
+
+
 namespace PasswordGeneratorService.API.Controllers
 {
     [ApiController]
@@ -14,6 +16,12 @@ namespace PasswordGeneratorService.API.Controllers
         public PasswordController(IPasswordGeneratorService passwordGeneratorService)
         {
             _passwordGeneratorService = passwordGeneratorService ?? throw new ArgumentNullException(nameof(passwordGeneratorService));
+        }
+
+        public async Task<IActionResult> Index()
+        {
+            // This is just a placeholder for the index route, you can return a simple message or redirect to documentation.
+            return Ok("Password Generator Service is running.");
         }
 
         [HttpPost("generate")]
