@@ -1,0 +1,4 @@
+[ Cliente ] → [ GatewayAPI ] → [ AuthService ]
+                            → [ PasswordGeneratorService ]
+                            → [ PasswordStorageCommandService ]
+                            → [ PasswordQueryService ]

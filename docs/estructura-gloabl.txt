@@ -1,0 +1,39 @@
+PasswordManagerService/
+└── src/
+    ├── AuthService/
+    │   ├── AuthService.sln
+    │   ├── AuthService.API/
+    │   ├── AuthService.Application/
+    │   ├── AuthService.Domain/
+    │   ├── AuthService.Infrastructure/
+    │   └── AuthService.Tests/
+    │
+    ├── PasswordGeneratorService/
+    │   ├── PasswordGeneratorService.sln
+    │   ├── PasswordGeneratorService.API/
+    │   ├── PasswordGeneratorService.Application/
+    │   ├── PasswordGeneratorService.Domain/
+    │   ├── PasswordGeneratorService.Infrastructure/
+    │   └── PasswordGeneratorService.Tests/
+    │
+    ├── PasswordStorageCommandService/
+    │   ├── PasswordStorageCommandService.sln
+    │   ├── PasswordStorageCommandService.API/
+    │   ├── PasswordStorageCommandService.Application/
+    │   ├── PasswordStorageCommandService.Domain/
+    │   ├── PasswordStorageCommandService.Infrastructure/
+    │   └── PasswordStorageCommandService.Tests/
+    │
+    ├── PasswordQueryService/
+    │   ├── PasswordQueryService.sln
+    │   ├── PasswordQueryService.API/
+    │   ├── PasswordQueryService.Application/
+    │   ├── PasswordQueryService.Domain/
+    │   ├── PasswordQueryService.Infrastructure/
+    │   └── PasswordQueryService.Tests/
+    │
+    └── GatewayAPI/
+        ├── GatewayAPI.sln
+        ├── GatewayAPI.API/
+        ├── GatewayAPI.Infrastructure/
+        └── GatewayAPI.Tests/

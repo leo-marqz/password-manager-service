@@ -1,0 +1,16 @@
+GatewayAPI/
+├── GatewayAPI.sln
+├── GatewayAPI.API/
+│   ├── Controllers/
+│   │   └── GatewayController.cs
+│   ├── Program.cs
+│   ├── appsettings.json
+│   └── GatewayAPI.API.csproj
+├── GatewayAPI.Infrastructure/
+│   ├── HttpClients/
+│   │   ├── IAuthServiceClient.cs
+│   │   ├── IPasswordServiceClient.cs
+│   │   └── Implementations/
+│   │       └── AuthServiceClient.cs
+│   └── GatewayAPI.Infrastructure.csproj
+└── GatewayAPI.Tests/
