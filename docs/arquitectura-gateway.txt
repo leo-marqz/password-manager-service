@@ -1,0 +1,12 @@
+          🌐 Cliente (Frontend o App Móvil)
+                          ↓
+        🔐 GatewayAPI (único punto expuesto públicamente)
+            ├── POST /auth/register      → llama a AuthService
+            ├── POST /auth/login         → llama a AuthService
+            ├── GET  /auth/validate      → llama a AuthService
+            └── POST /auth/refresh       → llama a AuthService
+
+            ├── POST /password/store     → llama a PasswordStorageCommandService
+            ├── GET  /password/list      → llama a PasswordQueryService
+                          ↓
+             📦 Microservicios internos protegidos

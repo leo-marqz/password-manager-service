@@ -10,6 +10,8 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+builder.Services.AddRouting(option => option.LowercaseUrls = true); // To ensure the URLs are lowercase, which is a good practice for APIs.
+
 builder.Services.AddScoped<IPasswordGeneratorService, ImplPasswordGeneratorService>();
 
 var app = builder.Build();

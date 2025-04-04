@@ -1,0 +1,13 @@
+# version: '3.8'
+
+services:
+  password-generator-service:
+    container_name: password-generator
+    build:
+      context: .
+      dockerfile: src/PasswordGeneratorService/PasswordGeneratorService.API/Dockerfile
+    ports:
+      - "8080:8080"
+    restart: unless-stopped
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development

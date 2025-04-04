@@ -52,4 +52,9 @@ dotnet build
 # Ejecutar la API (desde la raíz del proyecto API)
 dotnet run --project PasswordGeneratorService.API
 
+# or with Docker
+
+docker build -t password-generator-service -f PasswordGeneratorService.API/Dockerfile .
+
+docker run -d -p 8080:8080 --name password-generator password-generator-service
 ```
