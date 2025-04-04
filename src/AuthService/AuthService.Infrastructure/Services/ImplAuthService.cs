@@ -14,15 +14,15 @@ using BCrypt.Net;
 
 namespace AuthService.Infrastructure.Services
 {
-    public class AuthService : IAuthService
+    public class ImplAuthService : IAuthService
     {
         private readonly IUserRepository _userRepository;
         private readonly JwtSettings _jwtSettings;
 
-        public AuthService(IUserRepository userRepository, JwtSettings jwtSettings)
+        public ImplAuthService(IUserRepository userRepository, IOptions<JwtSettings> jwtSettings)
         {
             _userRepository = userRepository ?? throw new ArgumentNullException(nameof(userRepository));
-            _jwtSettings = jwtSettings ?? throw new ArgumentNullException(nameof(jwtSettings));
+            _jwtSettings = jwtSettings.Value ?? throw new ArgumentNullException(nameof(jwtSettings));
         }
 
         public async Task<AuthResultDto> LoginAsync(LoginRequestDto request){
