@@ -22,12 +22,20 @@ namespace AuthService.Infrastructure.Data
             // Aquí puedes configurar tus entidades, relaciones, etc.
 
             modelBuilder.Entity<User>(entity=>{
-                
-                entity.ToTable("Users"); // Nombre de la tabla en la base de datos
-                entity.HasKey(u => u.Id); // Llave primaria
-                entity.Property(u => u.Email).IsRequired().HasMaxLength(256); // Email requerido y longitud máxima
-                entity.Property(u => u.PasswordHash).IsRequired(); // PasswordHash requerido
-                entity.Property(u => u.MfaEnabled).IsRequired().HasDefaultValue(false); // MFA habilitado por defecto
+                entity.HasKey(user => user.Id); // Llave primaria
+                entity.Property(user=> user.Username).HasMaxLength(50).IsRequired(); 
+                entity.Property(user=> user.Email).IsRequired();
+                entity.Property(user=> user.PasswordHash).IsRequired(); 
+                entity.HasMany(user => user.RefreshTokens).WithOne(rt => rt.User).HasForeignKey(rt => rt.UserId);
+            });
+
+            modelBuilder.Entity<RefreshToken>(entity => 
+            {
+                entity.HasKey(rt => rt.Id);
+                entity.Property(rt => rt.Token).IsRequired(); 
+                entity.HasIndex(rt => rt.Token).IsUnique(); 
+                entity.Property(rt => rt.ExpiresAt).IsRequired();
+                entity.Property(rt => rt.CreatedAt).IsRequired();
             });
         }
 
